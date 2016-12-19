@@ -1095,6 +1095,11 @@ You can use `defaultHeaders` property for this or `$httpProvider.defaults.header
 RestangularProvider.setDefaultHttpFields({cache: true});
 ````
 
+If you want to allow caching only for individual requests, you may use the .withHttpConfig method on a Restangular instance. For example:
+````javascript
+Restangular.all("users").withHttpConfig({ cache: true }).get();
+````
+
 #### Can it be used in `$routeProvider.resolve`?
 
 Yes, of course. Every method in Restangular returns a promise so this can be used without any problem.
